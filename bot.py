@@ -46,9 +46,8 @@ async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
         signal = "🟡 WAIT Signal"
 
     await update.message.reply_text(
-        f"📊 BTC Signal\n\nPrice: ${price}\n\n{signal}"
+        f"📊 BTC Smart Signal\n\n💰 Price: ${price}\n\n{signal}\n\n⚠️ Market analysis based"
     )
-
 app = Application.builder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
