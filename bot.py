@@ -19,7 +19,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     btc_price = data["bitcoin"]["usd"]
 eth_price = data["ethereum"]["usd"]
-dataasync["binancecoin"]["usd
+bnb_price = data["binancecoin"]["usd"]
 sol_price = data["solana"]["usd"]
 
 await update.message.reply_text(
