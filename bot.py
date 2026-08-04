@@ -12,14 +12,14 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Commands:\n/start\n/help\n/price\n/signal"
     )
 
-async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
+ def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = requests.get(
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
     ).json()
 
     btc_price = data["bitcoin"]["usd"]
 eth_price = data["ethereum"]["usd"]
-bnb_price = data["binancecoin"]["usd"]
+bnb_price = dataasync["binancecoin"]["usd"]
 sol_price = data["solana"]["usd"]
 
 await update.message.reply_text(
