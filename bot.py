@@ -28,7 +28,8 @@ await update.message.reply_text(
         f"🔷 ETH: ${eth_price}\n"
         f"🟡 BNB: ${bnb_price}\n"
         f"🟣 SOL: ${sol_price}"
-    )
+    
+)
 
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
