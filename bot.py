@@ -33,6 +33,7 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    market = "EUR/USD"
     data = requests.get(
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
     ).json()
