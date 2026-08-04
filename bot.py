@@ -22,7 +22,7 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
         bnb_price = data["binancecoin"]["usd"]
         sol_price = data["solana"]["usd"]
 
-await update.message.reply_text(
+  await update.message.reply_text(
         f"💰 Crypto Prices\n\n"
         f"₿ BTC: ${btc_price}\n"
         f"🔷 ETH: ${eth_price}\n"
