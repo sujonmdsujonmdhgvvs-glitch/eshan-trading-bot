@@ -12,7 +12,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Commands:\n/start\n/help\n/price\n/signal"
     )
 
-    async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = requests.get(
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
     ).json()
