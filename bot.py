@@ -23,13 +23,13 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
         sol_price = data["solana"]["usd"]
 
 await update.message.reply_text(
-    f"💰 Crypto Prices\n\n"
-    f"₿ BTC: ${btc_price}\n"
-    f"🔷 ETH: ${eth_price}\n"
-    f"🟡 BNB: ${bnb_price}\n"
-    f"🟣 SOL: ${sol_price}"
+        f"💰 Crypto Prices\n\n"
+        f"₿ BTC: ${btc_price}\n"
+        f"🔷 ETH: ${eth_price}\n"
+        f"🟡 BNB: ${bnb_price}\n"
+        f"🟣 SOL: ${sol_price}"
+    )
 
-)
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     data = requests.get(
