@@ -24,7 +24,22 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Signal feature coming soon 📊")
+    data = requests.get(
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+    ).json()
+
+    price = data["bitcoin"]["usd"]
+
+    if price > 65000:
+        signal = "🟢 BUY Signal"
+    elif price < 60000:
+        signal = "🔴 SELL Signal"
+    else:
+        signal = "🟡 WAIT Signal"
+
+    await update.message.reply_text(
+        f"📊 BTC Signal\n\nPrice: ${price}\n\n{signal}"
+    )
 
 app = Application.builder().token(TOKEN).build()
 
