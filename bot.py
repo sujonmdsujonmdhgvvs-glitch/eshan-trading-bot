@@ -17,10 +17,10 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
     ).json()
 
-    btc_price = data["bitcoin"]["usd"]
-eth_price = data["ethereum"]["usd"]
-bnb_price = data["binancecoin"]["usd"]
-sol_price = data["solana"]["usd"]
+        btc_price = data["bitcoin"]["usd"]
+        eth_price = data["ethereum"]["usd"]
+        bnb_price = data["binancecoin"]["usd"]
+        sol_price = data["solana"]["usd"]
 
 await update.message.reply_text(
     f"💰 Crypto Prices\n\n"
