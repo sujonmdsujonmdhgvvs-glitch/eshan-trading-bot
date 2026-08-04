@@ -18,9 +18,17 @@ async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
     ).json()
 
     btc_price = data["bitcoin"]["usd"]
+eth_price = data["ethereum"]["usd"]
+bnb_price = data["binancecoin"]["usd"]
+sol_price = data["solana"]["usd"]
 
-    await update.message.reply_text(
-        f"₿ Bitcoin Price: ${btc_price}"
+await update.message.reply_text(
+    f"💰 Crypto Prices\n\n"
+    f"₿ BTC: ${btc_price}\n"
+    f"🔷 ETH: ${eth_price}\n"
+    f"🟡 BNB: ${bnb_price}\n"
+    f"🟣 SOL: ${sol_price}"
+
     )
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
