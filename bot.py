@@ -13,7 +13,15 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def price(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Price feature coming soon 📈")
+    data = requests.get(
+        "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+    ).json()
+
+    btc_price = data["bitcoin"]["usd"]
+
+    await update.message.reply_text(
+        f"₿ Bitcoin Price: ${btc_price}"
+    )
 
 async def signal(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Signal feature coming soon 📊")
